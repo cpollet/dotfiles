@@ -1,0 +1,4 @@
+alias mvnci'mvn clean install'
+alias mvncist='mvn clean install -DskipTests'
+alias mvnd='mvn clean deploy'
+alias mvndst='mvn clean deploy -DskipTests'
