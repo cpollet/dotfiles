@@ -1,0 +1,8 @@
+alias ll='ls -l'
+alias la='ls -la'
+alias ..="cd .."
+alias -- -="cd -"
+
+alias fjava='find . -name "*.java"'
+alias fperl='find . -name "*.pl"'
+alias fproperties='find . -name "*.properties"'
