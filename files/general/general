@@ -6,3 +6,6 @@ alias -- -="cd -"
 alias fjava='find . -name "*.java"'
 alias fperl='find . -name "*.pl"'
 alias fproperties='find . -name "*.properties"'
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
