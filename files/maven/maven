@@ -6,3 +6,5 @@ alias mvnt='mvn dependency:tree | less'
 alias mvndl='mvn clean dependency:copy-dependencies ; ls -l target/dependency/ | grep jar | rev | cut -d" " -f1 | rev | sort | uniq > deps.txt'
 alias mvnsrc='mvn dependency:sources'
 alias mvnsnap='mvnt | grep SNAPSHOT'
+
+export MAVEN_OPTS=-Djava.awt.headless=true

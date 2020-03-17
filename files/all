@@ -1,0 +1,7 @@
+. ~/.dotfiles.git/files/docker/docker
+. ~/.dotfiles.git/files/firefox/firefox
+. ~/.dotfiles.git/files/general/general
+. ~/.dotfiles.git/files/git/git
+. ~/.dotfiles.git/files/kdiff3/kdiff3
+. ~/.dotfiles.git/files/maven/maven
+. ~/.dotfiles.git/files/mercurial/mercurial

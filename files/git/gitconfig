@@ -1,0 +1,62 @@
+[core]
+        excludesfile = ~/.gitignore
+        pager = less -FRX
+[difftool "sourcetree"]
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
+[user]
+        name = Christophe Pollet
+[include]
+        path = .gitconfig.local
+[push]
+        default = simple
+[alias]
+        a = add
+        aa = add --all
+        alias = "!git config -l | grep alias | cut -c 7-"
+        ap = add --patch
+        b = branch
+        bd = branch -d
+        bp = "!git branch $1 && git push origin $1"
+        bs = branch -v --all
+        c = commit
+        ca = commit --amend
+        cb = checkout -B
+        cm = "!f() { git commit -m \"$1\"; }; f"
+        co = checkout
+        co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+        cof = checkout --force
+        cp = cherry-pick
+        cs = "!f() { git diff \"$1\"^! ; } ; f"
+        d = diff
+        ds = diff --staged
+        dt = difftool --dir-diff
+        dtcs = "!f() { git difftool --dir-diff \"$1\"^! ; } ; f"
+        dts = difftool --dir-diff --staged
+        f = fetch
+        fp = fetch --prune
+        gh-email = config user.email \"cpollet@users.noreply.github.com\"
+        kd = difftool --dir-diff
+        l = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short
+        l30 = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short -n30
+        lb = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit
+        ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
+        m = checkout master
+        p = pull
+        r = rebase
+        rc = rebase --continue
+        res = "!git reset --hard HEAD && git clean -dfx"
+        s = status
+        serve = "!git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/"
+        sui = status --ignored -u
+        t = tag
+        tl = tag -l
+	wl = "!watch --color -n1 \"git -c color.ui=always l30\""
+[diff]
+        tool = kdiff3
+        guitool = kdiff3
+#[mergetool "kdiff3"]
+#        cmd = kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
