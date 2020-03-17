@@ -1,2 +1,8 @@
 alias ff='firefox'
 alias ffp='firefox --private-window'
+
+case "$OSTYPE" in
+  darwin*)
+    . ~/.dotfiles.git/files/firefox/firefox.darwin
+  ;;
+esac
