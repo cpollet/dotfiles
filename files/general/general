@@ -1,11 +1,24 @@
+#!/bin/bash
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 alias ll='ls -l'
 alias la='ls -la'
 alias ..="cd .."
 alias -- -="cd -"
 
+alias f='find . -name'
 alias fjava='find . -name "*.java"'
 alias fperl='find . -name "*.pl"'
+alias ftmpl='find . -name "*.tmpl"'
 alias fproperties='find . -name "*.properties"'
 
-export VISUAL=vim
-export EDITOR="$VISUAL"
+alias citrix='/opt/Citrix/ICAClient/selfservice'
+
+alias vi_alias='$EDITOR ~/.bash_aliases && . ~/.bash_aliases'
+alias vi_env='$EDITOR ~/.bash_env && . ~/.bash_env'
+
+alias svi='sudo $EDITOR'
+
+# alias s='sublime_text'
