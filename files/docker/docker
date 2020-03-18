@@ -1,1 +1,27 @@
+#!/bin/bash
+
+alias d='docker'
+
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.CreatedAt}}\t{{.Status}}"'
+
+alias docker_run='docker run -it --rm -v `pwd`:/host '
+
+function docker_clean {
+	stopped_containers=`docker ps -q -f "status=exited"`
+	if [[ $stopped_containers != '' ]]; then
+		echo  Destroying $stopped_containers
+		docker rm $stopped_containers
+	fi
+
+	dangling_images=`docker images -q -f "dangling=true"`
+	if [[ $dangling_images != '' ]]; then
+		echo Deleting `docker images -q -f "dangling=true"`
+		docker rmi `docker images -q -f "dangling=true"`
+	fi
+
+	snapshot_images=`docker images --format "{{.Repository}}:{{.Tag}}" | grep SNAP`
+	for i in $snapshot_images; do
+		echo Deleting `$1`
+		docker rmi $i
+	done
+}

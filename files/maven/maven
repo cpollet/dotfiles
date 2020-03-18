@@ -1,10 +1,13 @@
+export MAVEN_OPTS=-Djava.awt.headless=true
+
+alias mvn='time mvn'
 alias mvnci'mvn clean install'
 alias mvncist='mvn clean install -DskipTests'
 alias mvnd='mvn clean deploy'
 alias mvndst='mvn clean deploy -DskipTests'
 alias mvnt='mvn dependency:tree | less'
-alias mvndl='mvn clean dependency:copy-dependencies ; ls -l target/dependency/ | grep jar | rev | cut -d" " -f1 | rev | sort | uniq > deps.txt'
+alias mvntg='mvn dependency:tree | less | grep '
 alias mvnsrc='mvn dependency:sources'
-alias mvnsnap='mvnt | grep SNAPSHOT'
+alias mvncd='mvn clean dependency:copy-dependencies'
 
-export MAVEN_OPTS=-Djava.awt.headless=true
+
