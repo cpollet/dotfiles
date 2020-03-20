@@ -5,3 +5,5 @@
 . ~/.dotfiles.git/files/kdiff3/kdiff3
 . ~/.dotfiles.git/files/maven/maven
 . ~/.dotfiles.git/files/mercurial/mercurial
+
+alias dot_update='git -C ~/.dotfiles.git pull'
