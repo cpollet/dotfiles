@@ -7,3 +7,7 @@
 . ~/.dotfiles.git/files/mercurial/mercurial
 
 alias dot_update='git -C ~/.dotfiles.git pull'
+
+if [ -f ~/.zsh_aliases ]; then
+	. ~/.zsh_aliases
+fi
