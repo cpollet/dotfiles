@@ -19,7 +19,7 @@
         alias = "!git config -l | grep alias | cut -c 7-"
         ap = add --patch
         b = branch
-        bd = branch -d
+        bd = branch -D
         bp = "!git branch $1 && git push origin $1"
         bs = branch -v --all
         c = commit
