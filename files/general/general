@@ -16,7 +16,7 @@ alias fproperties='find . -name "*.properties"'
 
 alias citrix='/opt/Citrix/ICAClient/selfservice'
 
-alias vi_alias='$EDITOR ~/.bash_aliases && . ~/.bash_aliases'
+alias vi_alias='$EDITOR ~/.zsh_aliases && . ~/.zsh_aliases'
 alias vi_env='$EDITOR ~/.bash_env && . ~/.bash_env'
 
 alias svi='sudo $EDITOR'
