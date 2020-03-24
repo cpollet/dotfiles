@@ -16,7 +16,7 @@ ln -s .dotfiles.git/files/git/gitignore ~/.gitignore
 ln -s .dotfiles.git/files/git/gitconfig ~/.gitconfig
 
 echo "Install aliases ..."
-echo -e "\n. ~/.dotfiles.git/files/all" >> ~/.zshrc
+echo "\n. ~/.dotfiles.git/files/all" >> ~/.zshrc
 
 echo "Install terminator ..."
 mkdir -p ~/.config/terminator
