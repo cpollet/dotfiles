@@ -21,4 +21,6 @@ alias vi_env='$EDITOR ~/.bash_env && . ~/.bash_env'
 
 alias svi='sudo $EDITOR'
 
+alias hosts='svi /etc/hosts'
+
 # alias s='sublime_text'
