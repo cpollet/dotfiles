@@ -9,5 +9,6 @@ alias mvnt='mvn dependency:tree | less'
 alias mvntg='mvn dependency:tree | less | grep '
 alias mvnsrc='mvn dependency:sources'
 alias mvncd='mvn clean dependency:copy-dependencies'
-
+alias mvnv='mvn verify'
+alias mvncv='mvn clean verify'
 
