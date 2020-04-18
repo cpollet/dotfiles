@@ -41,6 +41,7 @@
         gh-email = config user.email \"cpollet@users.noreply.github.com\"
         kd = difftool --dir-diff
         l = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short
+        ll = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short -n30
         l30 = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short -n30
         lb = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit
         ls = "!watch -cpn1 'date ; git -c color.ui=always s'"

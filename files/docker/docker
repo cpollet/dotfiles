@@ -5,6 +5,7 @@ alias d='docker'
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.CreatedAt}}\t{{.Status}}"'
 
 alias docker_run='docker run -it --rm -v `pwd`:/host '
+alias docker_prune='docker system prune --volumes'
 
 function docker_clean {
 	stopped_containers=`docker ps -q -f "status=exited"`

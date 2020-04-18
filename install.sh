@@ -22,5 +22,8 @@ echo "Install terminator ..."
 mkdir -p ~/.config/terminator
 ln -s ~/.dotfiles.git/files/terminator/config ~/.config/terminator
 
+echo "Install vim..."
+ln -s ~/.dotfiles.git/files/vim/vimrc ~/.vimrc
+
 echo "Press CTRL+D to exit subshell"
 zsh
