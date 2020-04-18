@@ -46,7 +46,8 @@
         lb = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit
         ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
         m = checkout master
-        p = pull
+        p = push
+        pf = push --force
         r = rebase
         rc = rebase --continue
         res = "!git reset --hard HEAD && git clean -dfx"
