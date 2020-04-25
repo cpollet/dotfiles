@@ -25,6 +25,7 @@
         c = commit
         ca = commit --amend
         cb = checkout -B
+        cc = reset --soft HEAD~1
         cm = "!f() { git commit -m \"$1\"; }; f"
         co = checkout
         co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
