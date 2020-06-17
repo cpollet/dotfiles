@@ -20,6 +20,8 @@
         ap = add --patch
         b = branch
         bd = branch -D
+        big =  bisect good
+        bib = bisect bad
         bp = "!git branch $1 && git push origin $1"
         bs = branch -v --all
         c = commit
@@ -40,13 +42,15 @@
         f = fetch
         fp = fetch --prune
         gh-email = config user.email \"cpollet@users.noreply.github.com\"
+        id = rev-parse HEAD
         kd = difftool --dir-diff
-        l = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short
-        ll = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short -n30
-        l30 = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=short -n30
+        l = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=format:'%Y-%m-%d %H:%M'
+        ll = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=format:'%Y-%m-%d %H:%M' -n30
+        l30 = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=format:'%Y-%m-%d %H:%M' -n30
         lb = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit
         ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
         m = checkout master
+        mt = mergetool --tool=kdiff3
         p = push
         pf = push --force
         r = rebase
@@ -56,6 +60,7 @@
         serve = "!git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/"
         sui = status --ignored -u
         t = tag
+        tb = "!f() { git checkout master && git pull && git commit --allow-empty -m 'trigger build' && git push ; } ; f"
         tl = tag -l
 	wl = "!watch --color -n1 \"git -c color.ui=always l30\""
 [diff]
