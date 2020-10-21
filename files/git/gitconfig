@@ -30,6 +30,8 @@
         cc = reset --soft HEAD~1
         cm = "!f() { git commit -m \"$1\"; }; f"
         co = checkout
+        con = "!f() { git checkout $(git rev-list --topo-order HEAD..$1 | tail -1); }; f"
+        cop = checkout HEAD~1
         co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
         cof = checkout --force
         cp = cherry-pick
@@ -52,6 +54,7 @@
         m = checkout master
         mt = mergetool --tool=kdiff3
         p = push
+        paf = push --all --force
         pf = push --force
         r = rebase
         rc = rebase --continue
