@@ -1,14 +1,18 @@
 export MAVEN_OPTS=-Djava.awt.headless=true
 
+alias m='mvn'
 alias mvn='time mvn'
 alias mvnci='mvn clean install'
+alias mci='mvn clean install'
 alias mvncist='mvn clean install -DskipTests'
+alias mcist='mvn clean install -DskipTests'
 alias mvnd='mvn clean deploy'
 alias mvndst='mvn clean deploy -DskipTests'
 alias mvnt='mvn dependency:tree | less'
+alias mt='mvn dependency:tree | less'
 alias mvntg='mvn dependency:tree | less | grep '
 alias mvnsrc='mvn dependency:sources'
 alias mvncd='mvn clean dependency:copy-dependencies'
 alias mvnv='mvn verify'
 alias mvncv='mvn clean verify'
-
+alias mvnep='mvn help:effective-pom | less'
