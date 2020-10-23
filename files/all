@@ -1,4 +1,5 @@
 . ~/.dotfiles.git/files/docker/docker
+. ~/.dotfiles.git/files/kubernetes/kubernetes
 . ~/.dotfiles.git/files/firefox/firefox
 . ~/.dotfiles.git/files/general/general
 . ~/.dotfiles.git/files/git/git
