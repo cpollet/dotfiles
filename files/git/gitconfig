@@ -19,6 +19,7 @@
         alias = "!git config -l | grep alias | cut -c 7-"
         ap = add --patch
         b = branch
+        bcl = "!f() { git checkout master && git pull && git fetch --prune && git branch -v --all && for b in $(git branch -v --all | grep gone | cut -d' ' -f3); do echo "Delete $b? [y/N]"; read ANS; if [ "$ANS" = "y" ]; then git branch -D $b; fi; done; }; f; echo '--' && git branch -v --all"
         bd = branch -D
         big =  bisect good
         bib = bisect bad
@@ -43,6 +44,7 @@
         dts = difftool --dir-diff --staged
         f = fetch
         fp = fetch --prune
+        fpbs = "!f() { git fetch --prune && git branch -v --all ; }; f"
         gh-email = config user.email \"cpollet@users.noreply.github.com\"
         id = rev-parse HEAD
         kd = difftool --dir-diff
