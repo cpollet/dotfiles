@@ -20,9 +20,9 @@ function docker_clean {
 		docker rmi `docker images -q -f "dangling=true"`
 	fi
 
-	snapshot_images=`docker images --format "{{.Repository}}:{{.Tag}}" | grep SNAP`
-	for i in $snapshot_images; do
-		echo Deleting `$1`
+	for i in `docker images --format "{{.Repository}}:{{.Tag}}" | grep SNAP`; do
+		echo "Deleting snapshot image $i"
 		docker rmi $i
 	done
+	docker system prune --volumes
 }
