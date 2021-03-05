@@ -24,3 +24,4 @@ alias svi='sudo $EDITOR'
 alias hosts='svi /etc/hosts'
 
 # alias s='sublime_text'
+alias reads='read -s'
