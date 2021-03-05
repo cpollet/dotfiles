@@ -29,6 +29,7 @@
         ca = commit --amend
         cb = checkout -B
         cc = reset --soft HEAD~1
+        cl = clean -df
         cm = "!f() { git commit -m \"$1\"; }; f"
         co = checkout
         con = "!f() { git checkout $(git rev-list --topo-order HEAD..$1 | tail -1); }; f"
@@ -48,19 +49,23 @@
         gh-email = config user.email \"cpollet@users.noreply.github.com\"
         id = rev-parse HEAD
         kd = difftool --dir-diff
-        l = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=format:'%Y-%m-%d %H:%M'
-        ll = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=format:'%Y-%m-%d %H:%M' -n30
-        l30 = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --all --date=format:'%Y-%m-%d %H:%M' -n30
-        lb = log --graph --pretty=format:'%Cblue%h %C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit
+        l   = "!git lb --all"
+        lb  = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --date=format:'%Y-%m-%d %H:%M'
+        lbm = "!git lbs master"
+        lbs = "!f() { git lb `git rev-parse --abbrev-ref HEAD` $@ ; }; f"
+        ll  = "!git l -n30"
         ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
         m = checkout master
-        mt = mergetool --tool=kdiff3
+        mt = "!git mergetool --tool=kdiff3 && find . -name '*.orig' -exec rm -i {} \\;"
         p = push
         paf = push --all --force
         pf = push --force
         r = rebase
         rc = rebase --continue
+        repo = remote -v
         res = "!git reset --hard HEAD && git clean -dfx"
+        ri = rebase -i
+        rim = rebase -i master
         s = status
         serve = "!git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/"
         sui = status --ignored -u
