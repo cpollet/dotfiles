@@ -5,7 +5,9 @@
 . ~/.dotfiles.git/files/git/git
 . ~/.dotfiles.git/files/kdiff3/kdiff3
 . ~/.dotfiles.git/files/maven/maven
+. ~/.dotfiles.git/files/gradle/gradle
 . ~/.dotfiles.git/files/mercurial/mercurial
+. ~/.dotfiles.git/files/java/java
 
 alias dot_update='git -C ~/.dotfiles.git pull'
 
