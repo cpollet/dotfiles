@@ -55,13 +55,15 @@
         lbs = "!f() { git lb `git rev-parse --abbrev-ref HEAD` $@ ; }; f"
         ll  = "!git l -n30"
         ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
-        m = checkout master
+        m = merge
+        mff = merge --ff
         mt = "!git mergetool --tool=kdiff3 && find . -name '*.orig' -exec rm -i {} \\;"
         p = push
         paf = push --all --force
         pf = push --force
         r = rebase
         rc = rebase --continue
+        rem = remote
         repo = remote -v
         res = "!git reset --hard HEAD && git clean -dfx"
         ri = rebase -i
