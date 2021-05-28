@@ -42,6 +42,7 @@
         ds = diff --staged
         dt = difftool --dir-diff
         dtcs = "!f() { git difftool --dir-diff \"$1\"^! ; } ; f"
+	dto = "!f() { git dt origin/`git rev-parse --abbrev-ref HEAD` `git rev-parse --abbrev-ref HEAD`; }; f"
         dts = difftool --dir-diff --staged
         f = fetch
         fp = fetch --prune
@@ -73,6 +74,7 @@
         sui = status --ignored -u
         t = tag
         tb = "!f() { git checkout master && git pull && git commit --allow-empty -m 'trigger build' && git push ; } ; f"
+        tdr = push --delete origin
         tl = tag -l
 	wl = "!watch --color -n1 \"git -c color.ui=always l30\""
 [diff]
