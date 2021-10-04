@@ -8,6 +8,8 @@
 . ~/.dotfiles.git/files/gradle/gradle
 . ~/.dotfiles.git/files/mercurial/mercurial
 . ~/.dotfiles.git/files/java/java
+. ~/.dotfiles.git/files/1password/1password
+. ~/.dotfiles.git/files/jetbrains/jetbrains
 
 alias dot_update='git -C ~/.dotfiles.git pull'
 

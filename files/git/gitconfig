@@ -42,6 +42,7 @@
         ds = diff --staged
         dt = difftool --dir-diff
         dtcs = "!f() { git difftool --dir-diff \"$1\"^! ; } ; f"
+        dtm = difftool --dir-diff master
 	dto = "!f() { git dt origin/`git rev-parse --abbrev-ref HEAD` `git rev-parse --abbrev-ref HEAD`; }; f"
         dts = difftool --dir-diff --staged
         f = fetch
@@ -57,12 +58,14 @@
         ll  = "!git l -n30"
         ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
         m = merge
+        ma = merge --abort
         mff = merge --ff
         mt = "!git mergetool --tool=kdiff3 && find . -name '*.orig' -exec rm -i {} \\;"
         p = push
         paf = push --all --force
         pf = push --force
         r = rebase
+        ra = rebase --abort
         rc = rebase --continue
         rem = remote
         repo = remote -v

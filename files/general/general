@@ -25,3 +25,5 @@ alias hosts='svi /etc/hosts'
 
 # alias s='sublime_text'
 alias reads='read -s'
+
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"

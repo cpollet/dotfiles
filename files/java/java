@@ -18,3 +18,5 @@ function j {
   \mvn -v | grep --color=always "Java version.*\|$" | grep --color=always "Apache Maven.*\|$" | while read line ; do echo "    $line"; done
 }
 
+alias j8='j 8'
+alias j11='j 11'
