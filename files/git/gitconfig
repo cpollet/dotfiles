@@ -9,6 +9,8 @@
 	trustExitCode = true
 [user]
         name = Christophe Pollet
+[credential "https://github.com"]
+	username = cpollet
 [include]
         path = .gitconfig.local
 [push]

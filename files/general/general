@@ -27,3 +27,7 @@ alias hosts='svi /etc/hosts'
 alias reads='read -s'
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+
+function yaml2json {
+	python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' < $1 > $2 
+}
