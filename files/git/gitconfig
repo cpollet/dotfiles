@@ -53,11 +53,11 @@
         gh-email = config user.email \"cpollet@users.noreply.github.com\"
         id = rev-parse HEAD
         kd = difftool --dir-diff
-        l   = "!git lb --all"
-        lb  = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --date=format:'%Y-%m-%d %H:%M'
+        l = "!git ll -n30"
+        ll = "!git lb --all"
+        lb = log --graph --pretty=format:'%Cblue%h %Cgreen%cd%Creset%C(yellow)%d%Creset %C(cyan)%an%Creset <%Cgreen%ae%Creset> %Creset%s' --abbrev-commit --date=format:'%Y-%m-%d %H:%M'
         lbm = "!git lbs master"
         lbs = "!f() { git lb `git rev-parse --abbrev-ref HEAD` $@ ; }; f"
-        ll  = "!git l -n30"
         ls = "!watch -cpn1 'date ; git -c color.ui=always s'"
         m = merge
         ma = merge --abort
@@ -72,6 +72,8 @@
         rem = remote
         repo = remote -v
         res = "!git reset --hard HEAD && git clean -dfx"
+	rf = checkout HEAD --
+	rh = reset --hard
         ri = rebase -i
         rim = rebase -i master
         s = status
