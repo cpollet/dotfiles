@@ -89,3 +89,5 @@
         guitool = kdiff3
 #[mergetool "kdiff3"]
 #        cmd = kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+[credential]
+	helper = store --file ~/.git-credentials
