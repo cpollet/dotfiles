@@ -16,6 +16,5 @@
     allow_bold = False
     cursor_color = "#aaaaaa"
     font = Ubuntu Mono 11
-    scroll_on_keystroke = False
     scrollback_infinite = True
     use_system_font = False
