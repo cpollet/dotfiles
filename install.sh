@@ -25,5 +25,11 @@ ln -s ~/.dotfiles.git/files/terminator/config ~/.config/terminator
 echo "Install vim..."
 ln -s ~/.dotfiles.git/files/vim/vimrc ~/.vimrc
 
+command -v terminator 2>&1 >/dev/null
+if [[ $? -eq 0 ]]; then
+	git clone https://github.com/dracula/terminator.git ~/.dracula/terminator
+	# ~/.dracula/terminator/install.sh -- skipped, already done...
+fi
+
 echo "Press CTRL+D to exit subshell"
 zsh
