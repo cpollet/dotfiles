@@ -4,6 +4,8 @@ alias d='docker'
 alias dw='watch "docker ps -a --format \"table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Status}}\" | grep -v dnsdock | grep -v NAME | sort"'
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.CreatedAt}}\t{{.Status}}"'
 alias dkill='for c in $(docker ps -a --format "table {{.Names}}" | grep -v NAMES | grep -v dnsdock); do docker kill $c; done'
+alias dv='docker volume'
+alias dn='docker network'
 
 alias docker_run='docker run -it --rm -v `pwd`:/host '
 #alias docker_prune='docker system prune --volumes'
