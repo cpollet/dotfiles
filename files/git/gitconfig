@@ -49,6 +49,7 @@
         cp = cherry-pick
         cs = "!f() { git diff \"$1\"^! ; } ; f"
         d = diff
+        do = "!f() { git d origin/`git rev-parse --abbrev-ref HEAD` `git rev-parse --abbrev-ref HEAD`; }; f"
         ds = diff --staged
         dt = difftool --dir-diff
         dtcs = "!f() { git difftool --dir-diff \"$1\"^! ; } ; f"
