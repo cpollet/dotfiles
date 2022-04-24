@@ -1,14 +1,22 @@
 [core]
         excludesfile = ~/.gitignore
         pager = less -FRX
+[user]
+	name = Christophe Pollet
+	useconfigonly = true
+[diff]
+        tool = kdiff3
+        guitool = kdiff3
 [difftool "sourcetree"]
 	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
-[user]
-        name = Christophe Pollet
+#[mergetool "kdiff3"]
+#        cmd = kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+[credential]
+	helper = store --file ~/.git-credentials
 [credential "https://github.com"]
 	username = cpollet
 [include]
@@ -47,10 +55,11 @@
         dtm = difftool --dir-diff master
 	dto = "!f() { git dt origin/`git rev-parse --abbrev-ref HEAD` `git rev-parse --abbrev-ref HEAD`; }; f"
         dts = difftool --dir-diff --staged
+	email = "!f() { echo -n \"Email [`git config user.email`]: \"; read EMAIL; if [ \"$EMAIL\" = \"\" ]; then EMAIL=`git config user.email`; fi; git config user.email \"$EMAIL\"; }; f"
+        email-gh = config user.email \"cpollet@users.noreply.github.com\"
         f = fetch
         fp = fetch --prune
         fpbs = "!f() { git fetch --prune && git branch -v --all ; }; f"
-        gh-email = config user.email \"cpollet@users.noreply.github.com\"
         id = rev-parse HEAD
         kd = difftool --dir-diff
         l = "!git ll -n30"
@@ -72,8 +81,9 @@
         rem = remote
         repo = remote -v
         res = "!git reset --hard HEAD && git clean -dfx"
-	rf = checkout HEAD --
-	rh = reset --hard
+        reset-author = commit --amend --reset-author --no-edit
+        rf = checkout HEAD --
+        rh = reset --hard
         ri = rebase -i
         rim = rebase -i master
         s = status
@@ -84,10 +94,3 @@
         tdr = push --delete origin
         tl = tag -l
 	wl = "!watch --color -n1 \"git -c color.ui=always l30\""
-[diff]
-        tool = kdiff3
-        guitool = kdiff3
-#[mergetool "kdiff3"]
-#        cmd = kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
-[credential]
-	helper = store --file ~/.git-credentials
