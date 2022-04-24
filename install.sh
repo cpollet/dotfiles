@@ -10,6 +10,9 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 mkdir -p ~/.oh-my-zsh/custom/themes
 ln -s ~/.dotfiles.git/files/zsh/cpollet.zsh-theme ~/.oh-my-zsh/custom/cpollet.zsh-theme
 sed -i 's/robbyrussell/cpollet/g' ~/.zshrc
+source ~/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g' .zshrc
 
 echo "Install git ..."
 ln -s .dotfiles.git/files/git/gitignore ~/.gitignore
