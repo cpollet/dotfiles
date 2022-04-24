@@ -33,6 +33,15 @@ ln -s ~/.dotfiles.git/files/terminator/config ~/.config/terminator
 echo "Install vim..."
 ln -s ~/.dotfiles.git/files/vim/vimrc ~/.vimrc
 
+echo "Install dracula theme"
+mkdir -p ~/.dracula
+command -v gnome-terminal 2>&1 >/dev/null
+if [[ $? -eq 0 ]]; then
+	git clone https://github.com/dracula/gnome-terminal ~/.dracula/gnome-terminal
+	~/.dracula/gnome-terminal/install.sh
+	echo '[ -f ~/.dir_colors/dircolors ] && eval `dircolors ~/.dir_colors/dircolors`' >> ~/.zshrc
+	rm ~/dircolors
+fi
 command -v terminator 2>&1 >/dev/null
 if [[ $? -eq 0 ]]; then
 	git clone https://github.com/dracula/terminator.git ~/.dracula/terminator
