@@ -10,6 +10,7 @@
 . ~/.dotfiles.git/files/java/java
 . ~/.dotfiles.git/files/1password/1password
 . ~/.dotfiles.git/files/jetbrains/jetbrains
+. ~/.dotfiles.git/files/systemctl/systemctl
 
 alias dot_update='git -C ~/.dotfiles.git pull'
 
