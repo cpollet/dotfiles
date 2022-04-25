@@ -1,4 +1,6 @@
 #!/bin/bash
+SELF=`realpath "$0"`
+DIR=`dirname "$SELF"`
 
 [[ ! -d ~/.dotfiles.git ]] && \
 	git clone https://github.com/cpollet/dotfiles.git ~/.dotfiles.git
@@ -56,19 +58,12 @@ echo "Install vim..."
 	ln -s ~/.dotfiles.git/files/vim/vimrc ~/.vimrc
 vim +'PlugInstall --sync' +qa
 
-echo "Install dracula theme ..."
-mkdir -p ~/.dracula
-
+echo "Install intallij-darcula's  like theme ..."
 command -v gnome-terminal 2>&1 >/dev/null
 if [[ $? -eq 0 ]]; then
 	echo "  gnome-terminal ..."
-	[[ ! -d ~/.dracula/gnome-terminal ]] && \
-		git clone https://github.com/dracula/gnome-terminal ~/.dracula/gnome-terminal
-	~/.dracula/gnome-terminal/install.sh
-	if [[ `grep "~/.dir_colors/dircolors" ~/.zshrc | wc -l` = "0" ]]; then
-		echo '[ -f ~/.dir_colors/dircolors ] && eval `dircolors ~/.dir_colors/dircolors`' >> ~/.zshrc
-	fi
-	rm ~/dircolors
+	echo -n "  Profile name (you may want to create a new one...)? "; read profile
+	$DIR/.gnome-terminal-theme.sh jetbrains-darcula $profile
 fi
 
 if [[ `grep "~/.dir_colors/dircolors" ~/.zshrc | wc -l` = "0" ]]; then
@@ -78,19 +73,26 @@ if [[ `grep "~/.dir_colors/dircolors" ~/.zshrc | wc -l` = "0" ]]; then
 	echo '[ -f ~/.dir_colors/dircolors ] && eval `dircolors ~/.dir_colors/dircolors`' >> ~/.zshrc
 fi
 
-command -v terminator 2>&1 >/dev/null
-if [[ $? -eq 0 ]]; then
-	echo "  terminator ..."
-	git clone https://github.com/dracula/terminator.git ~/.dracula/terminator
-	# ~/.dracula/terminator/install.sh -- skipped, already done...
-fi
+#mkdir -p ~/.dracula
+#command -v gnome-terminal 2>&1 >/dev/null
+#if [[ $? -eq 0 ]]; then
+#	echo "  gnome-terminal ..."
+#	[[ ! -d ~/.dracula/gnome-terminal ]] && \
+#		git clone https://github.com/dracula/gnome-terminal ~/.dracula/gnome-terminal
+#	~/.dracula/gnome-terminal/install.sh
+#fi
+#command -v terminator 2>&1 >/dev/null
+#if [[ $? -eq 0 ]]; then
+#	echo "  terminator ..."
+#	git clone https://github.com/dracula/terminator.git ~/.dracula/terminator
+#	# ~/.dracula/terminator/install.sh -- skipped, already done...
+#fi
 
 command -v gnome-tweaks 2>&1 >/dev/null
 if [[ $? -eq 0 ]]; then
-	echo "Remap Caps Lock to CTRL. Hit enter when done"
-	gnome-tweaks
+	echo "Remap Caps Lock to CTRL. Hit enter when done."
+	gnome-tweaks &
 	read
 fi
 
-echo "Press CTRL+D to exit subshell"
-zsh
+echo "Restart your shell / terminal"
