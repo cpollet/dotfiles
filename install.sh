@@ -85,5 +85,12 @@ if [[ $? -eq 0 ]]; then
 	# ~/.dracula/terminator/install.sh -- skipped, already done...
 fi
 
+command -v gnome-tweaks 2>&1 >/dev/null
+if [[ $? -eq 0 ]]; then
+	echo "Remap Caps Lock to CTRL. Hit enter when done"
+	gnome-tweaks
+	read
+fi
+
 echo "Press CTRL+D to exit subshell"
 zsh
