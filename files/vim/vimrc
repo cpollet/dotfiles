@@ -2,6 +2,26 @@ set number
 set relativenumber
 set updatetime=250
 
+nnoremap <C-l> :set relativenumber! <Enter>
+"inoremap <> <><Left>
+"inoremap () ()<Left>
+"inoremap {} {}<Left>
+"inoremap [] []<Left>
+"inoremap "" ""<Left>
+"inoremap '' ''<Left>
+"inoremap `` ``<Left>
+
+" bad habits killers...
+nnoremap <Up>    <Nop>
+nnoremap <Down>  <Nop>
+nnoremap <Left>  <Nop>
+nnoremap <Right> <Nop>
+inoremap <Up>    <Nop>
+inoremap <Down>  <Nop>
+inoremap <Left>  <Nop>
+inoremap <Right> <Nop>
+
+
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
 	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -10,6 +30,22 @@ endif
 
 call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'doums/darcula', { 'as': 'darcula' }
 Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 call plug#end()
-colorscheme dracula
+
+colorscheme darcula
+let g:lightline = { 'colorscheme': 'darculaOriginal' }
+
+" https://github.com/vim/vim/issues/3608
+" This is only necessary if you use "set termguicolors".
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" fixes glitch? in colors when using vim with tmux
+set background=dark
+set t_Co=256
+set termguicolors
+
+set laststatus=2
+set noshowmode
