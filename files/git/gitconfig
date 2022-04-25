@@ -1,5 +1,6 @@
 [core]
         excludesfile = ~/.gitignore
+        askPass = /home/cpollet/.dotfiles.git/files/git/op_get_credentials.sh
         pager = less -FRX
 [user]
 	name = Christophe Pollet
