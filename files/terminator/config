@@ -15,10 +15,10 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#282a36"
-    cursor_color = "#f8f8f2"
+    background_color = "#202020"
+    cursor_color = "#ffffff"
     font = Ubuntu Mono 11
-    foreground_color = "#f8f8f2"
-    palette = "#262626:#e356a7:#42e66c:#e4f34a:#9b6bdf:#e64747:#75d7ec:#efa554:#7a7a7a:#ff79c6:#50fa7b:#f1fa8c:#bd93f9:#ff5555:#8be9fd:#ffb86c"
+    foreground_color = "#adadad"
+    palette = "#000000:#fa5355:#4e9a06:#c2c300:#4581eb:#fa54ff:#33c2c1:#adadad:#555555:#fb7172:#67ff4f:#ffff00:#6d9df1:#fb82ff:#60d3d1:#eeeeee"
     scrollback_infinite = True
     use_system_font = False
