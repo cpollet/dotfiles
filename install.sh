@@ -65,7 +65,9 @@ command -v gnome-terminal 2>&1 >/dev/null
 if [[ $? -eq 0 ]]; then
 	echo "  gnome-terminal ..."
 	echo -n "  Profile name (you may want to create a new one...)? "; read profile
-	$DIR/.gnome-terminal-theme.sh jetbrains-darcula $profile
+	if [[ "$profile" != "" ]]; then
+		$DIR/.gnome-terminal-theme.sh jetbrains-darcula $profile
+	fi
 fi
 
 if [[ `grep "~/.dir_colors/dircolors" ~/.zshrc | wc -l` = "0" ]]; then
