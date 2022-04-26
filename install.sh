@@ -27,6 +27,10 @@ fi
 sed -i 's/^plugins=.*$/plugins=(git zsh-syntax-highlighting)/g' ~/.zshrc
 
 echo "Install tmux ..."
+command -v xclip 2>&1 >/dev/null
+if [[ $? -ne 0 ]]; then
+	sudo apt-get install xclip
+fi
 mkdir -p ~/.tmux/plugins
 
 [[ ! -d ~/.tmux/plugins/tpm ]] && \
