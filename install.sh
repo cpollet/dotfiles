@@ -77,7 +77,7 @@ fi
 if [[ `grep "~/.dir_colors/dircolors" ~/.zshrc | wc -l` = "0" ]]; then
 	echo "  dircolors..."
 	mkdir -p ~/.dir_colors
-	wget -O ~/.dir_colors/dircolors https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
+	ln -s ~/.dotfiles/files/zsh/dircolors ~/.dir_colors/dircolors
 	echo '[ -f ~/.dir_colors/dircolors ] && eval `dircolors ~/.dir_colors/dircolors`' >> ~/.zshrc
 fi
 
