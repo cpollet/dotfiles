@@ -33,6 +33,8 @@ mkdir -p ~/.tmux/plugins
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 [[ ! -f ~/.tmux.conf ]] && \
 	ln -s ~/.dotfiles.git/files/tmux/tmux.conf ~/.tmux.conf
+[[ ! -f ~/.tmux/reset.conf ]] && \
+	ln -s ~/.dotfiles.git/files/tmux/reset.conf ~/.tmux/reset.conf
 
 echo "Install git ..."
 [[ ! -f ~/.gitignore ]] && \
