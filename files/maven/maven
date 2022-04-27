@@ -1,7 +1,6 @@
 export MAVEN_OPTS=-Djava.awt.headless=true
 
 alias m='mvn'
-alias mvn='time mvn'
 alias mvnci='mvn clean install'
 alias mci='mvn clean install'
 alias mvncist='mvn clean install -DskipTests'
