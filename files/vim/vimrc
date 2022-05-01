@@ -1,12 +1,15 @@
+set ttimeout
+set ttimeoutlen=10
 set number
 set relativenumber
 set updatetime=250
 set incsearch
 set hlsearch
-set list
+" set list
 set listchars=eol:¬,tab:▸\ ,space:·
 
 nnoremap <C-l> :set relativenumber! <Enter>
+nnoremap <C-w> :set list! <Enter>
 "inoremap <> <><Left>
 "inoremap () ()<Left>
 "inoremap {} {}<Left>
