@@ -7,9 +7,11 @@ set incsearch
 set hlsearch
 " set list
 set listchars=eol:¬,tab:▸\ ,space:·
+set showcmd
+let mapleader = ","
 
-nnoremap <C-l> :set relativenumber! <Enter>
-nnoremap <C-w> :set list! <Enter>
+nnoremap <leader>l :set relativenumber! <Enter>
+nnoremap <leader>w :set list! <Enter>
 "inoremap <> <><Left>
 "inoremap () ()<Left>
 "inoremap {} {}<Left>
