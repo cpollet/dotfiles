@@ -1,4 +1,4 @@
-function j {
+function j() {
   echo "Switching to java $1"
   if [ -f /usr/libexec/java_home ]; then
     export JAVA_HOME=`/usr/libexec/java_home $1`
@@ -15,7 +15,7 @@ function j {
   java -version 3>&1 | grep --color=always ".*version.*\|$" | while read line ; do echo "    $line"; done
   echo
   echo "Maven configuration"
-  \mvn -v | grep --color=always "Java version.*\|$" | grep --color=always "Apache Maven.*\|$" | while read line ; do echo "    $line"; done
+  mvn -v | grep --color=always "Java version.*\|$" | grep --color=always "Apache Maven.*\|$" | while read line ; do echo "    $line"; done
 }
 
 alias j8='j 8'

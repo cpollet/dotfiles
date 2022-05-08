@@ -1,0 +1,6 @@
+---
+- name: Create ~/.config/dircolors symlink
+  file:
+    src: ~/.dotfiles/files/ls/dircolors
+    dest: ~/.config/dircolors
+    state: link

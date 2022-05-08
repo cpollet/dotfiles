@@ -1,0 +1,14 @@
+---
+- name: Create ~/.vim
+  file:
+    path: ~/.vim
+    state: directory
+
+- name: Create ~/.vim/vimrc symlink
+  file:
+    src: ~/.dotfiles/files/vim/vimrc
+    dest: ~/.vim/vimrc
+    state: link
+
+#- name: Sync vim plugins
+#  shell: vim +'PlugInstall --sync' +qa

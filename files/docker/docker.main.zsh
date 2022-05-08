@@ -1,5 +1,3 @@
-#!/bin/bash
-
 alias d='docker'
 alias dps='docker ps -a --format "table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Status}}"'
 alias dw='wt eval "dps | grep -v dnsdock | grep -v NAME | sort"'

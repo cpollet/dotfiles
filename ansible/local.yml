@@ -1,0 +1,24 @@
+---
+- name: Create ~/.config
+  file:
+    path: ~/.config
+    state: directory
+
+- name: Fetch execute_dotfile_playbook.yml
+  fetch:
+    src: ~/.dotfiles/ansible/tasks/execute_dotfile_playbook.yml
+    dest: "{{ tmp_dir }}"
+  changed_when: false
+
+- name: Execute execute_dotfile_playbook.yml
+  include_tasks: "{{ tmp_dir }}/localhost/home/{{ current_user }}/.dotfiles/ansible/tasks/execute_dotfile_playbook.yml"
+  vars:
+    playbooks:
+      - zsh
+      - ls
+      - git
+      - vim
+      - tmux
+  with_items: "{{ playbooks }}"
+  loop_control:
+    loop_var: playbook

@@ -1,0 +1,47 @@
+---
+- name: Create ~/.config/zsh
+  file:
+    path: ~/.config/zsh/{{ item }}
+    state: directory
+  with_items:
+    - themes
+    - plugins
+
+- name: Check if ~/.zsh_history exists
+  stat:
+    path: ~/.zsh_history
+  register: zsh_history
+
+- name: Move ~/.zsh_history to ~/.config/zsh/history
+  shell: mv ~/.zsh_history ~/.config/zsh/history
+  when: zsh_history.stat.exists
+
+- name: Create ~/.config/zsh/history
+  file:
+    path: ~/.config/zsh/history
+    state: touch
+    mode: 0600
+  when: not zsh_history.stat.exists
+
+- name: Fix ~/.config/zsh/history mode
+  file:
+    path: ~/.config/zsh/history
+    mode: 0600
+
+- name: Clone https://github.com/olivierverdier/zsh-git-prompt.git
+  git:
+    repo: https://github.com/olivierverdier/zsh-git-prompt.git
+    dest: ~/.config/zsh/plugins/zsh-git-prompt
+    update: true
+
+- name: Clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.config/zsh/plugins/zsh-syntax-highlighting
+    update: true
+
+- name: Create ~/.zshrc symlinkk
+  file:
+    src: ~/.dotfiles/files/zsh/zshrc
+    dest: ~/.zshrc
+    state: link

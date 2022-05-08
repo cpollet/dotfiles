@@ -1,0 +1,5 @@
+alias f='find . -name'
+alias fjava='find . -name "*.java"'
+alias fperl='find . -name "*.pl"'
+alias ftmpl='find . -name "*.tmpl"'
+alias fproperties='find . -name "*.properties"'
