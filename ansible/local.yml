@@ -10,7 +10,7 @@
     dest: "{{ tmp_dir }}"
   changed_when: false
 
-- name: Execute execute_dotfile_playbook.yml
+- name: Execute common tasks
   include_tasks: "{{ tmp_dir }}/localhost/home/{{ current_user }}/.dotfiles/ansible/tasks/execute_dotfile_playbook.yml"
   vars:
     playbooks:
@@ -22,3 +22,14 @@
   with_items: "{{ playbooks }}"
   loop_control:
     loop_var: playbook
+
+- name: Fetch gnome tasks
+  tags: gnome
+  fetch:
+    src: ~/.dotfiles/ansible/tasks/gnome.yml
+    dest: "{{ tmp_dir }}"
+  changed_when: false
+
+- name: Execute gnome tasks
+  include_tasks: "{{ tmp_dir }}/localhost/home/{{ current_user }}/.dotfiles/ansible/tasks/gnome.yml"
+  tags: gnome

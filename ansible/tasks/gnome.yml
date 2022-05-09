@@ -1,0 +1,48 @@
+---
+- name: Install gnome related packages
+  become: true
+  package:
+    name:
+      - python-psutil
+      - dconf-editor
+      - gnome-tweaks
+
+- name: Fix Alt-Tab to switch windows (1/4)
+  dconf: key="/org/gnome/desktop/wm/keybindings/switch-windows" value="['<Alt>Tab']"
+- name: Fix Alt-Tab to switch windows (2/4)
+  dconf: key="/org/gnome/desktop/wm/keybindings/switch-windows-backward" value="['<Shift><Alt>Tab']"
+- name: Fix Alt-Tab to switch windows (3/4)
+  dconf: key="/org/gnome/desktop/wm/keybindings/switch-applications" value="@as []"
+- name: Fix Alt-Tab to switch windows (4/4)
+  dconf: key="/org/gnome/desktop/wm/keybindings/switch-applications-backward" value="@as []"
+
+- name: Confgure dock (1/3)
+  dconf: key="/org/gnome/shell/extensions/dash-to-dock/dock-fixed" value="false"
+- name: Confgure dock (2/3)
+  dconf: key="/org/gnome/shell/extensions/dash-to-dock/autohide-in-fullscreen" value="true"
+- name: Confgure dock (3/3)
+  dconf: key="/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size" value="16"
+
+- name: Configure favorite apps
+  dconf: key="/org/gnome/shell/favorite-apps" value="['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop', 'firefox.desktop']"
+
+- name: Terminal theme (1/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/list" value="['58ba1642-4d93-448b-9226-10f4a66e174c']"
+- name: Terminal theme (2/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/default" value="'58ba1642-4d93-448b-9226-10f4a66e174c'"
+- name: Terminal theme (3/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/:58ba1642-4d93-448b-9226-10f4a66e174c/visible-name" value="'darcula'"
+- name: Terminal theme (4/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/:58ba1642-4d93-448b-9226-10f4a66e174c/use-theme-colors" value="false"
+- name: Terminal theme (5/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/:58ba1642-4d93-448b-9226-10f4a66e174c/foreground-color" value="'rgb(173,173,173)'"
+- name: Terminal theme (6/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/:58ba1642-4d93-448b-9226-10f4a66e174c/background-color" value="'rgb(32,32,32)'"
+- name: Terminal theme (7/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/:58ba1642-4d93-448b-9226-10f4a66e174c/palette" value="['rgb(0,0,0)', 'rgb(250,83,85)', 'rgb(78,154,6)', 'rgb(194,195,0)', 'rgb(69,129,235)', 'rgb(250,84,255)', 'rgb(51,194,193)', 'rgb(173,173,173)', 'rgb(85,85,85)', 'rgb(251,113,114)', 'rgb(103,255,79)', 'rgb(255,255,0)', 'rgb(109,157,241)', 'rgb(251,130,255)', 'rgb(96,211,209)', 'rgb(238,238,238)']"
+- name: Terminal theme (8/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/:58ba1642-4d93-448b-9226-10f4a66e174c/cursor-colors-set" value="false"
+- name: Terminal theme (9/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/:58ba1642-4d93-448b-9226-10f4a66e174c/use-system-font" value="false"
+- name: Terminal theme (10/10)
+  dconf: key="/org/gnome/terminal/legacy/profiles:/:58ba1642-4d93-448b-9226-10f4a66e174c/font" value="'Monospace 10'"
