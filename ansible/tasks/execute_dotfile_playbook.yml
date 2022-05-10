@@ -1,9 +1,0 @@
----
-- name: Fetch {{ playbook }} ansible tasks
-  fetch:
-    src: ~/.dotfiles/ansible/tasks/{{ playbook }}.yml
-    dest: "{{ tmp_dir }}"
-  changed_when: false
-
-- name: Configure {{ playbook }}
-  include_tasks: "{{ tmp_dir }}/localhost/home/{{ current_user }}/.dotfiles/ansible/tasks/{{ playbook }}.yml"

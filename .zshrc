@@ -1,33 +1,26 @@
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-
 export ZSH=$HOME/.config/zsh
-ZSH_CACHE_DIR="$HOME/.cache/zsh"
-
 export VISUAL=vim
 export EDITOR=$VISUAL
 export PAGER=less
 export LESS=-R
+ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
 setopt long_list_jobs
 setopt interactivecomments
 setopt multios
 setopt prompt_subst
 
-# Load color associative array
+# Load color associative array and setup LS_COLOR
 autoload -Uz colors && colors
+eval `dircolors ~/.config/dircolors`
 
-source $ZSH/plugins/zsh-git-prompt/zshrc.sh
-
-DOTHOME=$HOME/.dotfiles/files
-for file ($DOTHOME/*/*.main.zsh); do
+find -L "$ZSH/zshrc.d" -type f | sort | while IFS= read -r file; do
 	source $file
 done
 
-source $DOTHOME/zsh/theme-cpollet.zsh
-source $DOTHOME/zsh/completion.zsh
-source $DOTHOME/zsh/history.zsh
-
-alias dot_update='git -C ~/.dotfiles pull'
+source $ZSH/plugins/zsh-git-prompt/zshrc.sh
+source $ZSH/themes/cpollet.zsh
 
 [ -f $HOME/.zsh_aliases ] && source ~/.zsh_aliases
 

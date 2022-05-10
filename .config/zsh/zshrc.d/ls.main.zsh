@@ -3,7 +3,6 @@
 
 # configure colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
-[ -f ~/.config/dircolors ] && dircolors &>/dev/null && eval `dircolors ~/.config/dircolors`
 
 if [[ "$OSTYPE" == darwin* ]]; then
   # this is a good alias, it works by default just using $LSCOLORS
