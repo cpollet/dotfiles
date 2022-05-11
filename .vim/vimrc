@@ -37,12 +37,13 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin()
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'doums/darcula', { 'as': 'darcula' }
-Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/lightline.vim'
-call plug#end()
+silent if plug#begin()
+	Plug 'dracula/vim', { 'as': 'dracula' }
+	Plug 'doums/darcula', { 'as': 'darcula' }
+	Plug 'airblade/vim-gitgutter'
+	Plug 'itchyny/lightline.vim'
+	call plug#end()
+endif
 
 colorscheme darcula
 let g:lightline = { 'colorscheme': 'darculaOriginal' }
