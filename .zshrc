@@ -3,13 +3,29 @@ export ZSH=$HOME/.config/zsh
 export VISUAL=vim
 export EDITOR=$VISUAL
 export PAGER=less
-export LESS=-R
+export LESS="-R -M"
 ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
+# see man zshoptions for all options
+
+# list jobs in the long format by default.
 setopt long_list_jobs
-setopt interactivecomments
+
+# allow comments even in interactive shells.
+setopt interactive_comments
+# perform implicit tees or cats when multiple redirections are attempted
 setopt multios
+
+# parameter expansion, command substitution and arithmetic expansion are performed in prompts.
 setopt prompt_subst
+
+# ^xv   edit current line in $EDITOR
+autoload -U edit-command-line;
+zle -N edit-command-line;
+bindkey '^xv' edit-command-line;
+
+# set vi bind keys
+bindkey -v
 
 # Load color associative array and setup LS_COLOR
 autoload -Uz colors && colors

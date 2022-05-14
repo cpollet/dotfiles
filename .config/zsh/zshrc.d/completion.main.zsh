@@ -31,3 +31,22 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
+
+
+#zstyle ':completion:*' completer _complete _ignored
+#zstyle ':completion:*' expand suffix
+#zstyle ':completion:*' file-sort name
+#zstyle ':completion:*' group-name ''
+#zstyle ':completion:*' ignore-parents parent pwd directory
+#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+#zstyle ':completion:*' list-suffixes true
+#zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-/]=** r:|=**' 'l:|=* r:|=*'
+#zstyle ':completion:*' menu select=1
+#zstyle ':completion:*' preserve-prefix '//[^/]##/'
+##zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+#zstyle ':completion:*' squeeze-slashes true
+#zstyle :compinstall filename '/home/cpollet/.zshrc'
+#
+#autoload -Uz compinit
+#compinit
