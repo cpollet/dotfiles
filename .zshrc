@@ -24,9 +24,6 @@ autoload -U edit-command-line;
 zle -N edit-command-line;
 bindkey '^xv' edit-command-line;
 
-# set vi bind keys
-bindkey -v
-
 # Load color associative array and setup LS_COLOR
 autoload -Uz colors && colors
 eval `dircolors ~/.config/dircolors`
@@ -35,6 +32,7 @@ find -L "$ZSH/zshrc.d" -type f | sort | while IFS= read -r file; do
 	source $file
 done
 
+source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $ZSH/plugins/zsh-git-prompt/zshrc.sh
 source $ZSH/themes/cpollet.zsh
 
