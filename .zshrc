@@ -6,6 +6,9 @@ export PAGER=less
 export LESS="-R -M"
 ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
+fpath=($HOME/.config/zsh/functions/ $fpath)
+autoload -Uz include
+
 # see man zshoptions for all options
 
 # list jobs in the long format by default.
@@ -24,7 +27,7 @@ autoload -U edit-command-line;
 zle -N edit-command-line;
 bindkey '^xv' edit-command-line;
 
-# Load color associative array and setup LS_COLOR
+# load color associative array and setup LS_COLOR
 autoload -Uz colors && colors
 eval `dircolors ~/.config/dircolors`
 

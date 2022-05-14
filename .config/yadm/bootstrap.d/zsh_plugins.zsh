@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+CWD=$(pwd)
 cd $HOME
 
 # yadm submodule add https://github.com/olivierverdier/zsh-git-prompt.git .config/zsh/plugins/zsh-git-prompt
@@ -7,3 +8,5 @@ cd $HOME
 # yadm submodule add https://github.com/jeffreytse/zsh-vi-mode.git .config/zsh/plugins/zsh-vi-mode
 
 yadm submodule update --recursive --init
+
+cd "$CWD"

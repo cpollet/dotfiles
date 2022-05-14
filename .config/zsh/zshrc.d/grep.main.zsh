@@ -2,6 +2,8 @@ GREP_OPTIONS=""
 
 # check for --color=auto
 echo | grep --color=auto "" &>/dev/null && GREP_OPTIONS+=" --color=auto"
+echo | egrep --color=auto "" &>/dev/null && GREP_OPTIONS+=" --color=auto"
+echo | fgrep --color=auto "" &>/dev/null && GREP_OPTIONS+=" --color=auto"
 
 VCS_FOLDERS="{.bzr,CVS,.git,.hg,.svn}"
 

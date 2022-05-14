@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+echo "execute vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'"
