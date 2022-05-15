@@ -9,13 +9,14 @@ ZSH_CACHE_DIR="$HOME/.cache/zsh"
 fpath=($HOME/.config/zsh/functions/ $fpath)
 autoload -Uz include
 
-# see man zshoptions for all options
+# see 'man zshoptions' for all options
 
 # list jobs in the long format by default.
 setopt long_list_jobs
 
 # allow comments even in interactive shells.
 setopt interactive_comments
+
 # perform implicit tees or cats when multiple redirections are attempted
 setopt multios
 
@@ -39,7 +40,7 @@ source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $ZSH/plugins/zsh-git-prompt/zshrc.sh
 source $ZSH/themes/cpollet.zsh
 
-[ -f $HOME/.zsh_aliases ] && source ~/.zsh_aliases
+include $HOME/.zsh_aliases
 
 # must be the last one (https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
