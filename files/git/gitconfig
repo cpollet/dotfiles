@@ -89,6 +89,7 @@
         ri = rebase -i
         rim = rebase -i master
         s = status
+	se = "!exa --long --classify --tree --git --all --icons --git-ignore --no-time --no-user --no-permissions --no-filesize --group-directories-first --ignore-glob='.git' --level="
         serve = "!git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/"
         sui = status --ignored -u
         t = tag
