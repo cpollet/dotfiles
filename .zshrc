@@ -39,5 +39,6 @@ source $ZSH/themes/cpollet.zsh
 
 include $HOME/.zsh_aliases
 
-# must be the last one (https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+# must be the last one
+# ref: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

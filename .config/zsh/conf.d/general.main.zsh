@@ -1,6 +1,3 @@
-# TODO delete alias citrix='/opt/Citrix/ICAClient/selfservice'
-# alias s='sublime_text'
-
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
 function yaml2json {

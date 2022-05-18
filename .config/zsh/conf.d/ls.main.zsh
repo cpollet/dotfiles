@@ -1,5 +1,5 @@
-# inspired by https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/theme-and-appearance.zsh
-# doc: https://gist.github.com/thomd/7667642
+# ref: https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/theme-and-appearance.zsh
+# ref: https://gist.github.com/thomd/7667642
 
 # configure colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"

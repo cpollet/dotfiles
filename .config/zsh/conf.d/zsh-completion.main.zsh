@@ -1,9 +1,10 @@
 # Resources:
-# - man zshoptions
-# - https://zsh.sourceforge.io/FAQ/zshfaq04.html
-# - https://zsh.sourceforge.io/Doc/Release/Completion-Widgets.html#Completion-Matching-Control
-# - https://thevaluable.dev/zsh-completion-guide-examples/
-# - https://www.csse.uwa.edu.au/programming/linux/zsh-doc/zsh_23.html
+# ref: man zshoptions
+# ref: https://zsh.sourceforge.io/FAQ/zshfaq04.html
+# ref: https://zsh.sourceforge.io/Doc/Release/Completion-Widgets.html#Completion-Matching-Control
+# ref: https://thevaluable.dev/zsh-completion-guide-examples/
+# ref: https://www.csse.uwa.edu.au/programming/linux/zsh-doc/zsh_23.html
+# ref: https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/completion.zsh
 
 ## ideas
 # https://github.com/finnurtorfa/zsh/blob/master/completion.zsh

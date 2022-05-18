@@ -1,8 +1,8 @@
+# ref: man zshoptions
+
 export HISTFILE=$ZSH/history
 export HISTSIZE=10000
 export SAVEHIST=10000
-
-# see man zshoptions for all options
 
 # where possible, the history entry is written out to the file after the
 # command is finished, so that the time taken  by  the  command  is

@@ -1,3 +1,9 @@
+# ref: https://thevaluable.dev/zsh-line-editor-configuration-mouseless/
+# ref: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html
+# ref: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Zle-Builtins
+# ref: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
+# ref: https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/key-bindings.zsh
+
 # To see the key combo you want you can use one of the following:
 # - sudo showkey -a
 # - cat > /dev/null
