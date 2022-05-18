@@ -5,6 +5,12 @@
 # - https://thevaluable.dev/zsh-completion-guide-examples/
 # - https://www.csse.uwa.edu.au/programming/linux/zsh-doc/zsh_23.html
 
+## ideas
+# https://github.com/finnurtorfa/zsh/blob/master/completion.zsh
+# https://stuvel.eu/post/2020-08-05-zsh-config/
+# https://github.com/Phantas0s/.dotfiles/blob/master/zsh/completion.zsh
+# https://github.com/sorin-ionescu/prezto/blob/master/modules/completion/init.zsh
+
  # offers three extensions to completion listings: the ability to
  # highlight matches in such a list, the ability to scroll through long
  # lists and a different style of menu completion. 

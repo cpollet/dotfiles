@@ -28,7 +28,7 @@ git_super_status() {
 			STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_AHEAD$GIT_AHEAD%{${reset_color}%}"
 		fi
 		STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_SEPARATOR"
-		if [ "$GIT_STAGED" -ne "0" ] && [ "$ZSH_THEME_GIT_PROMPT_STAGED" != "" ]; then
+		if [ "$GIT_STAGED" -ne "0" ] && [ "$ZSH_THEME_GIT_PROMPT_STAGED" != "" ]; then
 			STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_STAGED$GIT_STAGED%{${reset_color}%}"
 		fi
 		if [ "$GIT_CONFLICTS" -ne "0" ] && [ "$ZSH_THEME_GIT_PROMPT_CONFLICTS" != "" ]; then

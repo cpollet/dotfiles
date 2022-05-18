@@ -23,20 +23,17 @@ setopt multios
 # parameter expansion, command substitution and arithmetic expansion are performed in prompts.
 setopt prompt_subst
 
-# ^xv   edit current line in $EDITOR
-autoload -U edit-command-line;
-zle -N edit-command-line;
-bindkey '^xv' edit-command-line;
-
 # load color associative array and setup LS_COLOR
 autoload -Uz colors && colors
 eval `dircolors ~/.config/dircolors`
 
-find -L "$ZSH/zshrc.d" -type f | sort | while IFS= read -r file; do
+find -L "$ZSH/conf.d" -type f | sort | while IFS= read -r file; do
 	source $file
 done
 
+ZVM_LINE_INIT_MODE='i'
 source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 source $ZSH/plugins/zsh-git-prompt/zshrc.sh
 source $ZSH/themes/cpollet.zsh
 
