@@ -1,0 +1,37 @@
+! same colors as https://github.com/EliverLara/terminator-themes/blob/master/schemes/JetBrains%20Darcula.config
+! special
+*.foreground:   #adadad
+*.background:   #202020
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #000000
+*.color8:       #555555
+
+! red
+*.color1:       #fa5355
+*.color9:       #fb7172
+
+! green
+*.color2:       #126e00
+*.color10:      #67ff4f
+
+! yellow
+*.color3:       #c2c300
+*.color11:      #ffff00
+
+! blue
+*.color4:       #4581eb
+*.color12:      #6d9df1
+
+! magenta
+*.color5:       #fa54ff
+*.color13:      #fb82ff
+
+! cyan
+*.color6:       #33c2c1
+*.color14:      #60d3d1
+
+! white
+*.color7:       #adadad
+*.color15:      #eeeeee

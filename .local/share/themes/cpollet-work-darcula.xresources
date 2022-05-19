@@ -1,0 +1,38 @@
+! Manual from IntelliJ theme + customization...
+! todo: fix color13 and color14
+! special
+*.foreground:   #A9B7C6
+*.background:   #2B2B2B
+!*.cursorColor:  #BBBBBB
+
+! black
+*.color0:       #000000
+*.color8:       #555555
+
+! red
+*.color1:       #BC3F3C
+*.color9:       #DF9D9C
+
+! green
+*.color2:       #629755
+*.color10:      #AFCEA7
+
+! yellow
+*.color3:       #A8C023
+*.color11:      #DAE987
+
+! blue
+*.color4:       #6897BB
+*.color12:      #B3CBDD
+
+! magenta
+*.color5:       #9876AA
+*.color13:      #FB82FF
+
+! cyan
+*.color6:       #CC7832
+*.color14:      #60D3D1
+
+! white
+*.color7:       #FFFFFF
+*.color15:      #EEEEEE
