@@ -1,21 +1,42 @@
 [core]
         excludesfile = ~/.gitignore
         askPass = /home/cpollet/.bin/op_get_credentials.sh
-        pager = less -FRX
+        #pager = less -FRX
+        # ref: https://dandavison.github.io/delta/configuration.html
+        pager = delta
+        whitespace = blank-at-eol,blank-at-eof,space-before-tab
 [user]
 	name = Christophe Pollet
 	useconfigonly = true
+[interactive]
+        # ref: https://dandavison.github.io/delta/configuration.html
+        diffFilter = delta --color-only --features=interactive
+[delta]
+        # EOL whitespaces highlighting doesn't work: https://github.com/dandavison/delta/issues/137
+        whitespace-error-style = red reverse
+        side-by-side = true
+        file-style = yellow
+        file-decoration-style = yellow ul ol
+        hunk-label = File
+        hunk-header-decoration-style = white ul
+        hunk-header-file-style = white
+        hunk-header-line-number-style = green
+        hunk-header-style = file line-number
+[delta "interactive"]
+        line-numbers = true
+        navigate = true
+        keep-plus-minus-markers = false
+        whitespace-error-style = red reverse
 [diff]
         tool = kdiff3
         guitool = kdiff3
-[difftool "sourcetree"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
-#[mergetool "kdiff3"]
-#        cmd = kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+        colorMoved = default
+[merge]
+        tool = kdiff3
+        conflictstyle = diff3
+[mergetool "kdiff3"]
+        cmd = kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+        keepBackup = false
 [credential]
 	helper = store --file ~/.git-credentials
 [credential "https://github.com"]
@@ -73,7 +94,7 @@
         m = merge
         ma = merge --abort
         mff = merge --ff
-        mt = "!git mergetool --tool=kdiff3 && find . -name '*.orig' -exec rm -i {} \\;"
+        mt = mergetool
         p = push
         paf = push --all --force
         pf = push --force
