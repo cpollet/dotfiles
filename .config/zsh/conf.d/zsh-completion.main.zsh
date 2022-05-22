@@ -60,7 +60,7 @@ zstyle ':completion:*' original true
 # take advantage of $LS_COLORS for completion as well.
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-# 0. default - insert '*'' (matching any number of characters in a
+# 0. default - insert '*' (matching any number of characters in a
 #      completion) at the cursor position. (because of complete_in_word)
 # 1. let any lower case character in the current word be completed to
 #      itself or its uppercase counterpart.
@@ -81,6 +81,8 @@ zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-dir
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
+source "$CONF_D/zsh-completion.ssh.zsh"
+
 # Don't complete uninteresting users
 zstyle ':completion:*:*:*:users' ignored-patterns \
         adm amanda apache at avahi avahi-autoipd beaglidx bin cacti canna \
@@ -89,11 +91,17 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
         ldap lp mail mailman mailnull man messagebus  mldonkey mysql nagios \
         named netdump news nfsnobody nobody nscd ntp nut nx obsrun openvpn \
         operator pcap polkitd postfix postgres privoxy pulse pvm quagga radvd \
-        rpc rpcuser rpm rtkit scard shutdown squid sshd statd svn sync tftp \
-        usbmux uucp vcsa wwwrun xfs '_*'
+        rpc rpcuser rpm rtkit scard shutdown squid sshd statd svn sync sys tftp \
+        usbmux uucp vcsa wwwrun xfs '_*' \
+        systemd-coredump gnome-initial-setup speech-dispatcher uuidd list saned \
+        gnats irc citrixlog syslog proxy kernoops backup colord \
+        nvidia-persistenced systemd-network hplip geoclue whoopsie \
+        systemd-resolve www-data cups-pk-helper
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
+
+
 
 autoload -Uz compinit && compinit
 

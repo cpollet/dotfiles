@@ -27,7 +27,8 @@ setopt prompt_subst
 autoload -Uz colors && colors
 eval `dircolors ~/.config/dircolors`
 
-find -L "$ZSH/conf.d" -type f | sort | while IFS= read -r file; do
+CONF_D="$ZSH/conf.d"
+find -L "$CONF_D" -type f | sort | while IFS= read -r file; do
 	source $file
 done
 
