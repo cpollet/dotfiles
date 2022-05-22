@@ -42,3 +42,10 @@ function docker_clean {
 
 	docker system prune --volumes
 }
+
+function docker_run() {
+  # ref: https://github.com/rawkode/zsh-docker-run
+  docker run --rm -it -u $UID -v $PWD:/sandbox -v $HOME:$HOME -e HOME=$HOME -w /sandbox --entrypoint=$2 $1 ${@:3}
+}
+
+alias ubuntu='docker_run "ubuntu:latest" "/bin/bash"'
