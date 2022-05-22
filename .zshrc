@@ -27,15 +27,16 @@ setopt prompt_subst
 autoload -Uz colors && colors
 eval `dircolors ~/.config/dircolors`
 
+ZVM_LINE_INIT_MODE='i'
+source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source $ZSH/plugins/jq-zsh-plugin/jq.plugin.zsh
+source $ZSH/plugins/zsh-git-prompt/zshrc.sh
+
 CONF_D="$ZSH/conf.d"
 find -L "$CONF_D" -type f | sort | while IFS= read -r file; do
 	source $file
 done
 
-ZVM_LINE_INIT_MODE='i'
-source $ZSH/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-source $ZSH/plugins/zsh-git-prompt/zshrc.sh
 source $ZSH/themes/cpollet.zsh
 
 include $HOME/.zsh_aliases
