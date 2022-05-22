@@ -10,3 +10,6 @@
 [submodule ".config/zsh/plugins/zsh-vi-mode"]
 	path = .config/zsh/plugins/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode.git
+[submodule ".config/zsh/plugins/jq-zsh-plugin"]
+	path = .config/zsh/plugins/jq-zsh-plugin
+	url = https://github.com/reegnz/jq-zsh-plugin.git

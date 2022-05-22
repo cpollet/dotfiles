@@ -81,8 +81,6 @@ zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-dir
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
-source "$CONF_D/zsh-completion.ssh.zsh"
-
 # Don't complete uninteresting users
 zstyle ':completion:*:*:*:users' ignored-patterns \
         adm amanda apache at avahi avahi-autoipd beaglidx bin cacti canna \
@@ -101,7 +99,8 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 # ... unless we really want to.
 zstyle '*' single-ignored show
 
-
+source "$CONF_D/zsh-completion.ssh.zsh"
+source "$CONF_D/zsh-completion.fzf.zsh"
 
 autoload -Uz compinit && compinit
 

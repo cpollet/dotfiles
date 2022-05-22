@@ -15,7 +15,6 @@ autoload -U edit-command-line;
 zle -N edit-command-line;
 bindkey '^xv' edit-command-line;
 
-
 # [Shift-Tab] - move through the completion menu backwards
 if [[ -n "${terminfo[kcbt]}" ]]; then
   bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
@@ -41,3 +40,15 @@ bindkey -M viins "^[^?" vi-backward-kill-word
 bindkey "^W" backward-kill-word
 bindkey -M emacs "^W" backward-kill-word
 bindkey -M viins "^W" vi-backward-kill-word
+
+# [Ctrl+R] - unbind everything for fzf support
+#bindkey -r          '^R'
+#bindkey -r -M emacs '^R'
+#bindkey -r -M vicmd '^R'
+bindkey -r -M viins '^R'
+
+source "$CONF_D/zsh-key-bindings.fzf.zsh"
+
+# [Alt+J] - bind to jq-complete
+#bindkey          '\ej' jq-complete
+#bindkey -M viins '\ej' jq-complete
