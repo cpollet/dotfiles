@@ -1,0 +1,4 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+# refer to alacritty.yml
+font:
+  size: 10
