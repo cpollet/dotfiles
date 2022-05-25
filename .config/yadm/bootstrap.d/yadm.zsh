@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-yadm gitconfig user.name "Christophe Pollet"
-yadm gitconfig user.email "cpollet@users.noreply.github.com"
+$HOME/.local/bin/yadm gitconfig user.name "Christophe Pollet"
+$HOME/.local/bin/yadm gitconfig user.email "cpollet@users.noreply.github.com"

@@ -5,7 +5,7 @@ cd $HOME
 
 # yadm submodule add https://github.com/tmux-plugins/tpm  .config/tmux/plugins/tpm
 
-yadm submodule update --recursive --init
+$HOME/.local/bin/yadm submodule update --recursive --init
 
 export TMUX_PLUGIN_MANAGER_PATH=$HOME/.config/tmux/plugins
 
