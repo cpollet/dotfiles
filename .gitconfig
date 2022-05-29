@@ -31,6 +31,8 @@
         tool = kdiff3
         guitool = kdiff3
         colorMoved = default
+[difftool "kdiff3"]
+        cmd = kdiff3 "$LOCAL" "$REMOTE"
 [merge]
         tool = kdiff3
         conflictstyle = diff3
