@@ -1,3 +1,5 @@
+command -v mvn &>/dev/null || return 0
+
 export MAVEN_OPTS=-Djava.awt.headless=true
 
 alias m='mvn'

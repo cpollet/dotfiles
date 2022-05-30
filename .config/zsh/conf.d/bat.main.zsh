@@ -1,5 +1,5 @@
 # ref: https://github.com/sharkdp/bat
-! command -v bat &>/dev/null && return 0
+command -v bat &>/dev/null || return 0
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 

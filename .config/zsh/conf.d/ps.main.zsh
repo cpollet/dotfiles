@@ -6,3 +6,4 @@ function ps_env() {
 		cat /proc/$1/environ | tr '\0' '\n'
 	fi
 }
+alias ps_x="xprop | awk '/PID/ {print $3}'"

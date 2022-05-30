@@ -23,8 +23,3 @@ fi
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -al'
-
-if exa &>/dev/null; then
-  # ref: https://github.com/ogham/exa
-  alias tree='exa --long --no-permissions --no-filesize --no-time --no-user --tree --git --icons --ignore-glob .git'
-fi

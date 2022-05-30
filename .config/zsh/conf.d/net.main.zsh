@@ -1,5 +1,4 @@
 alias addr='getent hosts'
-alias lsop='sudo netstat -tap'
-#netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
+alias lsop='ss -tulp'
 alias serve='echo http://localhost:8000 && python -m SimpleHTTPServer'
 alias dnsflush='sudo service dnsmasq restart'
