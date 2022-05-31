@@ -21,6 +21,8 @@ _log "init started"
 fpath=($HOME/.config/zsh/functions/ $fpath)
 for fn in $HOME/.config/zsh/functions/*; autoload -Uz "$fn"
 
+zmodload zsh/zutil
+
 # see 'man zshoptions' for all options
 
 # list jobs in the long format by default.
