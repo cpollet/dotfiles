@@ -19,3 +19,5 @@ alias mvnep='mvn help:effective-pom | less'
 alias mvnvs='mvn versions:set'
 alias mvns='mvn dependency:tree | grep -E "\[INFO\] [+|]" | grep SNAPSHOT'
 alias mvnf='mvn -f'
+
+alias -g Dst='-DskipTests'
