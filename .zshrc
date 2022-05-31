@@ -19,7 +19,7 @@ function source() {
 _log "init started"
 
 fpath=($HOME/.config/zsh/functions/ $fpath)
-autoload -Uz include
+for fn in $HOME/.config/zsh/functions/*; autoload -Uz "$fn"
 
 # see 'man zshoptions' for all options
 
