@@ -104,6 +104,8 @@ source "$CONF_D/zsh-completion.fzf.zsh"
 
 autoload -Uz compinit && compinit
 
+source "$CONF_D/zsh-completion.1password.zsh"
+
 #zstyle ':completion:*' completer _complete _ignored
 #zstyle ':completion:*' expand suffix
 #zstyle ':completion:*' file-sort name
