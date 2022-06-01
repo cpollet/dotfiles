@@ -15,6 +15,7 @@ elif echo | grep --exclude=$VCS_FOLDERS "" &>/dev/null; then
 fi
 
 alias grep="grep$GREP_OPTIONS"
+alias -g G='| grep'
 
 unset GREP_OPTIONS
 unset VCS_FOLDERS
