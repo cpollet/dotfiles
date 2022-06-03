@@ -2,8 +2,6 @@ export PATH=$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 export ZSH=$HOME/.config/zsh
 export VISUAL=vim
 export EDITOR=$VISUAL
-export PAGER=less
-export LESS="-R -M"
 ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
 LOG=
