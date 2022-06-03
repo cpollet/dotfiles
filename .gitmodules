@@ -16,3 +16,6 @@
 [submodule ".local/lib/yadm"]
 	path = .local/lib/yadm
 	url = https://github.com/TheLocehiliosan/yadm.git
+[submodule ".local/share/dotfiles-secrets"]
+	path = .local/share/dotfiles-secrets
+	url = https://git.cpollet.io/cpollet/dotfiles-secrets.git

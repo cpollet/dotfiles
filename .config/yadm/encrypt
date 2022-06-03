@@ -1,2 +1,3 @@
 .ssh/config*
 .local/share/applications/btsdev.desktop
+.m2/settings.xml##class.work
