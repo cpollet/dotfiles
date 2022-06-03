@@ -10,8 +10,6 @@ alias mvncv='mvn clean verify -Ddockerfile.skip=true -Dskip.pmd=true -Dcheckstyl
 alias mcist='mvn clean install -DskipTests'
 alias mvnd='mvn clean deploy'
 alias mvndst='mvn clean deploy -DskipTests'
-alias mvnt='mvn dependency:tree | less'
-alias mt='mvn dependency:tree | less'
 alias mvntg='mvn dependency:tree | less | grep '
 alias mvnsrc='mvn dependency:sources'
 alias mvncd='mvn clean dependency:copy-dependencies'
@@ -21,3 +19,7 @@ alias mvns='mvn dependency:tree | grep -E "\[INFO\] [+|]" | grep SNAPSHOT'
 alias mvnf='mvn -f'
 
 alias -g Dst='-DskipTests'
+
+function mvnt() {
+	mvn $@ dependency:tree | $PAGER
+}
